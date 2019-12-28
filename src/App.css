@@ -1,19 +1,5 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,8 +10,82 @@
   color: white;
 }
 
+.App-header {
+  position: absolute;
+  top: 5%;
+}
+
+.App-logo {
+  height: 20vmin;
+  width: 20vmin;
+  border: 0.5vmin solid #61dafb;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-title {
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 2vmin;
+  margin-top: 3vmin;
+  margin-bottom: 1vmin;
+}
+
+.subtitle-wrap {
+  background: transparent;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.subtitle-wrap:hover::before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.subtitle-wrap::before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  letter-spacing: 1vmin;
+  font-weight: 100;
+  font-size: 2.5vmin;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: all 0.3s ease-in-out;
+}
+
+.subtitle-wrap:hover h2 {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.subtitle-wrap h2 {
+  text-transform: uppercase;
+  letter-spacing: 1vmin;
+  font-weight: 100;
+  font-size: 2.5vmin;
+  transition: all 0.3s ease-in-out;
+}
+
+.subtitle {
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.App-footer {
+  position: absolute;
+  bottom: 5%;
 }
 
 @keyframes App-logo-spin {
