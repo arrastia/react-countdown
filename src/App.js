@@ -1,15 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+import { useJQuery } from "./_hooks/useJQuery";
 
 function App() {
+  const $ = useJQuery();
+
+  useEffect(() => {
+    if ($) {
+    }
+  }, [$]);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1 className="App-title">pablo arrastia</h1>
+        <div className="subtitle-wrap" data-hover="See you soon!">
+          <h2 className="subtitle">Working on the new website</h2>
+        </div>
+      </header>
+      <section></section>
+      <footer className="App-footer">
+        This project is build with react.{" "}
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -18,7 +32,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </footer>
     </div>
   );
 }
