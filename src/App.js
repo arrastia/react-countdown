@@ -23,7 +23,7 @@ function App() {
           <h2 className="subtitle">Working on the new website</h2>
         </div>
       </header>
-      <section>
+      <section className="App-countdown">
         <Countdown />
       </section>
       <footer className="App-footer">

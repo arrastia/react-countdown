@@ -1,3 +1,22 @@
+.countdown-wrap {
+  padding: 0;
+}
+
+.countdown-items {
+  display: inline-block;
+  font-size: 2vmin;
+  text-transform: uppercase;
+  letter-spacing: 1vmin;
+  font-weight: 100;
+  list-style-type: none;
+  padding: 2vmin;
+}
+
+.countdown-time {
+  display: block;
+  font-size: 7vmin;
+}
+
 .time-over {
   text-transform: uppercase;
   letter-spacing: 1vmin;
