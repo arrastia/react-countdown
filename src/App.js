@@ -4,6 +4,8 @@ import "./App.css";
 
 import { useJQuery } from "./_hooks/useJQuery";
 
+import { Countdown } from "./_components/Countdown";
+
 function App() {
   const $ = useJQuery();
 
@@ -21,7 +23,9 @@ function App() {
           <h2 className="subtitle">Working on the new website</h2>
         </div>
       </header>
-      <section></section>
+      <section>
+        <Countdown />
+      </section>
       <footer className="App-footer">
         This project is build with react.{" "}
         <a

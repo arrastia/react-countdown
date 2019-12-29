@@ -16,9 +16,9 @@
 }
 
 .App-logo {
-  height: 20vmin;
-  width: 20vmin;
-  border: 0.5vmin solid #61dafb;
+  height: 10vmin;
+  width: 10vmin;
+  border: 0.25vmin solid #61dafb;
   border-radius: 50%;
   pointer-events: none;
 }
@@ -86,6 +86,7 @@
 .App-footer {
   position: absolute;
   bottom: 5%;
+  font-weight: 100;
 }
 
 @keyframes App-logo-spin {
