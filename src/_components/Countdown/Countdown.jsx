@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Countdown.css";
 
 export const Countdown = () => {
   useEffect(() => {
@@ -8,7 +9,7 @@ export const Countdown = () => {
   });
 
   const calculateTimeLeft = () => {
-    const difference = new Date("2020-1-30") - new Date();
+    const difference = new Date("2010-1-30") - new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -40,7 +41,11 @@ export const Countdown = () => {
 
   return (
     <div>
-      {timerComponents.length ? timerComponents : <span>time is over</span>}
+      {timerComponents.length ? (
+        timerComponents
+      ) : (
+        <span className="time-over">time is over</span>
+      )}
     </div>
   );
 };
