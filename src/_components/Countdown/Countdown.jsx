@@ -9,15 +9,17 @@ export const Countdown = () => {
   });
 
   const calculateTimeLeft = () => {
-    const difference = new Date("2010-1-30") - new Date();
+    const difference = new Date("2020-1-30") - new Date();
     let timeLeft = {};
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60)
+        days: ("0" + Math.floor(difference / (1000 * 60 * 60 * 24))).slice(-2),
+        hours: ("0" + Math.floor((difference / (1000 * 60 * 60)) % 24)).slice(
+          -2
+        ),
+        minutes: ("0" + Math.floor((difference / 1000 / 60) % 60)).slice(-2),
+        seconds: ("0" + Math.floor((difference / 1000) % 60)).slice(-2)
       };
     }
 
@@ -33,19 +35,22 @@ export const Countdown = () => {
     }
 
     timerComponents.push(
-      <span>
-        {timeLeft[interval]} {interval}{" "}
-      </span>
+      <li className="countdown-items">
+        <span id={interval} className="countdown-time">
+          {timeLeft[interval]}
+        </span>
+        {interval}
+      </li>
     );
   });
 
   return (
-    <div>
+    <>
       {timerComponents.length ? (
-        timerComponents
+        <ul className="countdown-wrap">{timerComponents}</ul>
       ) : (
         <span className="time-over">time is over</span>
       )}
-    </div>
+    </>
   );
 };
