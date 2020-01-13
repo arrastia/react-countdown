@@ -5,6 +5,7 @@ import "./App.css";
 import { useJQuery } from "./_hooks/useJQuery";
 
 import { Countdown } from "./_components/Countdown";
+import { NotifyMe } from "./_components/NotifyMe/NotifyMe";
 
 function App() {
   const $ = useJQuery();
@@ -26,15 +27,18 @@ function App() {
       <section className="App-countdown">
         <Countdown />
       </section>
+      <section>
+        <NotifyMe />
+      </section>
       <footer className="App-footer">
-        This project is build with react.{" "}
+        This project is build with{" "}
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          react.
         </a>
       </footer>
     </div>
