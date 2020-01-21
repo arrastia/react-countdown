@@ -9,7 +9,7 @@ export const Countdown = () => {
   });
 
   const calculateTimeLeft = () => {
-    const difference = new Date("2020-1-30") - new Date();
+    const difference = new Date("2020-3-30") - new Date();
     let timeLeft = {};
 
     if (difference > 0) {

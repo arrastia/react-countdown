@@ -27,11 +27,11 @@ function App() {
       <section className="App-countdown">
         <Countdown />
       </section>
-      <section>
+      <section className="App-notifyme">
         <NotifyMe />
       </section>
       <footer className="App-footer">
-        This project is build with{" "}
+        Learn more about{" "}
         <a
           className="App-link"
           href="https://reactjs.org"

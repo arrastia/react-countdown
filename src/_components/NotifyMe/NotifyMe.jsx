@@ -29,7 +29,7 @@ export const NotifyMe = () => {
             placeholder="E-mail"
             pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
             required
-            onBlur={() => onCloseNotifyMe()}
+            // onBlur={() => onCloseNotifyMe()}
           />
           <label className="c-form__buttonLabel" htmlFor="checkbox">
             <button className="c-form__button" type="button">

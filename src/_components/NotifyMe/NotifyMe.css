@@ -24,7 +24,8 @@
   + .c-formContainer
   .c-form__input:required:valid
   ~ .c-form__toggle::before {
-  content: "Thank You! \1F60A";
+  content: "Thank You!";
+  letter-spacing: 0.2vmin;
 }
 .c-checkbox:not(:checked)
   + .c-formContainer
@@ -61,7 +62,10 @@
   box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
-  border: 0.05em solid white;
+  border: 0.075em solid white;
+}
+.c-form:valid {
+  border-color: #61dafb;
 }
 
 .c-form__toggle {
@@ -74,10 +78,10 @@
   justify-content: center;
 }
 .c-form__toggle::before {
-  font-size: 0.875em;
-  letter-spacing: 1vmin;
+  font-size: 4vmin;
+  letter-spacing: 0.3vmin;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 150;
   content: attr(data-title);
 }
 
@@ -103,22 +107,38 @@
 }
 
 .c-form__input {
-  color: #282c3480;
+  color: white;
   height: 100%;
   width: 100%;
   padding: 0 0.714em;
+  background: transparent;
+  letter-spacing: 0.1vmin;
+  text-transform: lowercase;
+  font-weight: 200;
 }
 .c-form__input::placeholder {
   color: currentColor;
+  font-style: italic;
+  letter-spacing: 0.5vmin;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
 }
 .c-form__input:required:valid {
   color: #61dafb;
 }
 .c-form__input:required:valid + .c-form__buttonLabel {
-  color: #ffffff;
+  color: #282c34;
 }
 .c-form__input:required:valid + .c-form__buttonLabel::before {
   pointer-events: initial;
+}
+.c-form__input:required:valid + .c-form__buttonLabel .c-form__button {
+  background-color: #61dafb;
+  color: #282c34;
+  font-weight: 250;
+  border: 0;
+  opacity: 1;
+  transition: 0.4s 0.2s;
 }
 
 .c-form__buttonLabel {
@@ -139,6 +159,10 @@
   color: inherit;
   padding: 0;
   height: 100%;
-  width: 2.5em;
-  background-color: #61dafb;
+  width: 4em;
+  opacity: 0.5;
+  color: #61dafb;
+  font-weight: 250;
+  border: 0.2vmin solid white;
+  background-color: transparent;
 }

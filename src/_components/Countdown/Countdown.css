@@ -4,7 +4,7 @@
 
 .countdown-items {
   display: inline-block;
-  font-size: 2vmin;
+  font-size: 3vmin;
   text-transform: uppercase;
   letter-spacing: 1vmin;
   font-weight: 100;
@@ -14,12 +14,12 @@
 
 .countdown-time {
   display: block;
-  font-size: 7vmin;
+  font-size: 9vmin;
 }
 
 .time-over {
   text-transform: uppercase;
   letter-spacing: 1vmin;
   font-weight: 100;
-  font-size: 5vmin;
+  font-size: 10vmin;
 }

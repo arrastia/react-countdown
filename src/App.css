@@ -82,6 +82,11 @@
 .App-countdown {
 }
 
+.App-notifyme {
+  position: relative;
+  top: 10vmin;
+}
+
 .App-link {
   color: #61dafb;
 }
