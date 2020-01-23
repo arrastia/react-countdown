@@ -6,8 +6,9 @@ import iconsResources from 'config/icons.json';
 
 import { useJQuery } from 'interfaces/views/.tools/_hooks/useJQuery';
 
-import { Countdown } from './_components/Countdown';
-import { NotifyMe } from './_components/NotifyMe/NotifyMe';
+import { Countdown } from '_components/Countdown';
+import { NotifyMe } from '_components/NotifyMe/NotifyMe';
+import { SocialMedia } from '_components/SocialMedia/SocialMedia';
 
 import { ResourcesContext } from 'interfaces/views/.tools/context/ResourcesContext';
 
@@ -36,6 +37,9 @@ function App() {
         </section>
         <section className="App-notifyme">
           <NotifyMe />
+        </section>
+        <section className="App-socialmedia">
+          <SocialMedia />
         </section>
         <footer className="App-footer">
           Learn more about{' '}

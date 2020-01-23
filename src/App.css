@@ -82,10 +82,20 @@
 .App-countdown {
 }
 
-.App-notifyme {
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .App-notifyme {
   position: relative;
   top: 10vmin;
 }
+
+.App-socialmedia {
+  position: relative;
+  top: 10vmin;
+} */
 
 .App-link {
   color: #61dafb;
