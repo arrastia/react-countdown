@@ -23,8 +23,18 @@
   pointer-events: none;
 }
 
+svg {
+  height: 10vmin;
+  width: 10vmin;
+  border: 0.25vmin solid;
+  border-radius: 50%;
+  pointer-events: none;
+  margin: 0vmin !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .App-logo,
+  svg {
     animation: App-logo-spin infinite 20s linear;
   }
 }
