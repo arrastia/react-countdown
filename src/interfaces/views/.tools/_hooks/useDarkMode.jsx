@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 
+import { useLocalStorage } from './useLocalStorage';
+import { useMedia } from './useMedia';
+
 export const useDarkMode = () => {
   const [enabledState, setEnabledState] = useLocalStorage('dark-mode-enabled');
-
-  const prefersDarkMode = usePrefersDarkMode();
+  const prefersDarkMode = useMedia(['(prefers-color-scheme: dark)'], [true], false);
 
   const enabled = typeof enabledState !== 'undefined' ? enabledState : prefersDarkMode;
 
