@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-export const useMedia = () => {
-  const mediaQueryLists = queries.map(q => window.matchMedia(q));
+export const useMedia = (queries, values, defaultValue) => {
+  const mediaQueryLists = queries.map(query => window.matchMedia(query));
 
   const getValue = () => {
     const index = mediaQueryLists.findIndex(mql => mql.matches);
