@@ -18,7 +18,7 @@
 .App-logo {
   height: 10vmin;
   width: 10vmin;
-  border: 0.25vmin solid #61dafb;
+  border: 0.25vmin solid var(--random-color);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -108,7 +108,7 @@ section {
 } */
 
 .App-link {
-  color: #61dafb;
+  color: var(--random-color);
 }
 
 .App-footer {

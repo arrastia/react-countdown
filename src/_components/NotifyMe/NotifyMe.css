@@ -16,21 +16,12 @@
   opacity: 1;
   transform: scale(1);
 }
-.c-checkbox:not(:checked)
-  + .c-formContainer
-  .c-form__input:required:valid
-  ~ .c-form__toggle::before,
-.c-checkbox:checked
-  + .c-formContainer
-  .c-form__input:required:valid
-  ~ .c-form__toggle::before {
-  content: "Thank You!";
+.c-checkbox:not(:checked) + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle::before,
+.c-checkbox:checked + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle::before {
+  content: 'Thank You!';
   letter-spacing: 0.2vmin;
 }
-.c-checkbox:not(:checked)
-  + .c-formContainer
-  .c-form__input:required:valid
-  ~ .c-form__toggle {
+.c-checkbox:not(:checked) + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle {
   pointer-events: none;
   cursor: default;
 }
@@ -65,11 +56,11 @@
   border: 0.075em solid white;
 }
 .c-form:valid {
-  border-color: #61dafb;
+  border-color: var(--random-color);
 }
 
 .c-form__toggle {
-  color: #61dafb;
+  color: var(--random-color);
   top: 0;
   cursor: pointer;
   z-index: 1;
@@ -124,7 +115,7 @@
   text-transform: uppercase;
 }
 .c-form__input:required:valid {
-  color: #61dafb;
+  color: var(--random-color);
 }
 .c-form__input:required:valid + .c-form__buttonLabel {
   color: #282c34;
@@ -133,7 +124,7 @@
   pointer-events: initial;
 }
 .c-form__input:required:valid + .c-form__buttonLabel .c-form__button {
-  background-color: #61dafb;
+  background-color: var(--random-color);
   color: #282c34;
   font-weight: 250;
   border: 0;
@@ -147,7 +138,7 @@
   width: auto;
 }
 .c-form__buttonLabel::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -161,7 +152,7 @@
   height: 100%;
   width: 4em;
   opacity: 0.5;
-  color: #61dafb;
+  color: var(--random-color);
   font-weight: 250;
   border: 0.2vmin solid white;
   background-color: transparent;

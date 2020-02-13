@@ -36,6 +36,9 @@ function App() {
     //setRandomColor(color);
   }, 2000);
 
+  getComputedStyle(document.documentElement).getPropertyValue('--random-color');
+  document.documentElement.style.setProperty('--random-color', randomColor);
+
   const reactIcon = () => {
     return (
       <svg

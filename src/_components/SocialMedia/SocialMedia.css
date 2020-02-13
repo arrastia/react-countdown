@@ -15,31 +15,31 @@
 }
 
 .buttons-wrapper .btn.codepen i {
-  color: #61dafb;
+  color: var(--random-color);
 }
 .buttons-wrapper .btn.codepen::before {
-  background-color: #61dafb;
+  background-color: var(--random-color);
 }
 
 .buttons-wrapper .btn.github i {
-  color: #61dafb;
+  color: var(--random-color);
 }
 .buttons-wrapper .btn.github::before {
-  background-color: #61dafb;
+  background-color: var(--random-color);
 }
 
 .buttons-wrapper .btn.instagram i {
-  color: #61dafb;
+  color: var(--random-color);
 }
 .buttons-wrapper .btn.instagram::before {
-  background-color: #61dafb;
+  background-color: var(--random-color);
 }
 
 .buttons-wrapper .btn.linkedin i {
-  color: #61dafb;
+  color: var(--random-color);
 }
 .buttons-wrapper .btn.linkedin::before {
-  background-color: #61dafb;
+  background-color: var(--random-color);
 }
 
 .buttons-wrapper .btn:focus::before,
