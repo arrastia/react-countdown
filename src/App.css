@@ -1,18 +1,15 @@
-.App {
-  text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
+.App-main {
+  left: 0;
+  width: calc(100vw - 2vmin);
+  height: calc(100vh - 30vmin);
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-header {
+  margin: 1vmin;
   position: absolute;
-  top: 5%;
+  top: 15vmin;
 }
 
 .App-logo {
@@ -23,114 +20,22 @@
   pointer-events: none;
 }
 
-svg,
-.reactIconButton {
-  height: 10vmin;
-  width: 10vmin;
-  border: 0.25vmin solid;
-  border-radius: 50%;
-  pointer-events: none;
-  margin: 0vmin !important;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo,
-  svg {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.reactIconButton {
-  position: absolute;
-  pointer-events: all;
-  background-color: transparent;
-  border: 0.5vmin solid transparent;
-  transform: translateX(-103%);
-}
-
-.App-title {
-  text-transform: uppercase;
-  font-weight: 200;
-  letter-spacing: 2vmin;
-  margin-top: 3vmin;
-  margin-bottom: 1vmin;
-}
-
-.subtitle-wrap {
-  background: transparent;
-  outline: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.subtitle-wrap:hover::before {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.subtitle-wrap::before {
-  content: attr(data-hover);
-  position: absolute;
-  top: 35%;
-  left: 0;
-  width: 100%;
-  letter-spacing: 1vmin;
-  font-weight: 100;
-  font-size: 2.5vmin;
-  opacity: 0;
-  transform: translate(-100%, 0);
-  transition: all 0.3s ease-in-out;
-}
-
-.subtitle-wrap:hover h2 {
-  opacity: 0;
-  transform: translate(100%, 0);
-}
-
-.subtitle-wrap h2 {
-  text-transform: uppercase;
-  letter-spacing: 1vmin;
-  font-weight: 100;
-  font-size: 2.5vmin;
-  transition: all 0.3s ease-in-out;
-}
-
-.subtitle {
-}
-
 .App-countdown {
 }
 
-section {
+.App-socialmedia {
+}
+
+.App-info,
+.App-countdown,
+.App-socialmedia,
+.App-notifyme {
+  /* width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-/* .App-notifyme {
-  position: relative;
-  top: 10vmin;
-}
-
-.App-socialmedia {
-  position: relative;
-  top: 10vmin;
-} */
-
-.App-link {
-  color: var(--random-color);
-}
-
-.App-footer {
-  position: absolute;
-  bottom: 5vmin;
-  font-weight: 100;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  justify-content: center;
+  margin: 1vmin;
+  top: 0;
+  position: relative; */
 }
