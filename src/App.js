@@ -9,15 +9,17 @@ import { SocialMedia } from '_components/SocialMedia/SocialMedia';
 
 import { ResourcesContext } from 'interfaces/views/.tools/context/ResourcesContext';
 
+import { useDarkMode } from 'interfaces/views/.tools/_hooks/useDarkMode';
 import { useInterval } from 'interfaces/views/.tools/_hooks/useInterval';
 import { useJQuery } from 'interfaces/views/.tools/_hooks/useJQuery';
 
 function App() {
   const [randomColor, setRandomColor] = useState('#61DAFB');
 
-  const resources = { ...iconsResources };
-
+  const [darkMode, setDarkMode] = useDarkMode();
   const $ = useJQuery();
+
+  const resources = { ...iconsResources };
 
   useEffect(() => {
     if ($) {
@@ -54,11 +56,14 @@ function App() {
     );
   };
 
+  const reactIconButton = <button className="reactIconButton" onClick={() => setDarkMode(!darkMode)}></button>;
+
   return (
     <ResourcesContext.Provider value={resources}>
       <div className="App">
-        <header className="App-header">
+        <header className="App-header" style={{ display: 'block' }}>
           {reactIcon()}
+          {reactIconButton}
           <h1 className="App-title">pablo arrastia</h1>
           <div className="subtitle-wrap" data-hover="See you soon!">
             <h2 className="subtitle">Working on the new website</h2>
