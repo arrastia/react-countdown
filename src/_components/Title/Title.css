@@ -1,0 +1,60 @@
+.App-info {
+  margin: auto;
+}
+
+@media screen and (max-width: 414px) {
+  .App-info {
+    /* position: absolute;
+      top: 0; */
+  }
+}
+
+.App-title {
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 2vmin;
+  margin: 0;
+  font-size: 7vmin;
+}
+
+.subtitle-wrap {
+  background: transparent;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.subtitle-wrap:hover::before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.subtitle-wrap::before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  letter-spacing: 1vmin;
+  font-weight: 100;
+  font-size: 2.5vmin;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: all 0.3s ease-in-out;
+}
+
+.subtitle-wrap:hover h2 {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.subtitle-wrap h2 {
+  text-transform: uppercase;
+  letter-spacing: 1vmin;
+  font-weight: 100;
+  font-size: 2.5vmin;
+  transition: all 0.3s ease-in-out;
+}
+
+.subtitle {
+}
