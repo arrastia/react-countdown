@@ -1,0 +1,48 @@
+.App-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 2vmin);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1vmin;
+  height: 15vmin;
+}
+
+svg,
+.reactIconButton {
+  height: 10vmin;
+  width: 10vmin;
+  border: 0.25vmin solid;
+  border-radius: 50%;
+  pointer-events: none;
+  margin: 0vmin !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo,
+  svg {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.reactIconButton {
+  position: absolute;
+  pointer-events: all;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.reactIconButton:focus {
+  outline: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
