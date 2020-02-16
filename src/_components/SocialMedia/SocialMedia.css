@@ -50,7 +50,7 @@
 
 .buttons-wrapper .btn:focus i,
 .buttons-wrapper .btn:hover i {
-  color: #282c34;
+  color: var(--bg-dark);
   transform: scale(1);
 }
 

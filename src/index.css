@@ -1,4 +1,6 @@
 :root {
+  --bg-dark: #282c34;
+  --bg-light: #f9fafb;
   --random-color: #61dafb;
   --react: #61dafb;
 }

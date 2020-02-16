@@ -36,6 +36,7 @@
 .c-formContainer {
   position: relative;
   font-weight: 700;
+  margin: auto;
 }
 
 .c-form,
@@ -53,7 +54,7 @@
   box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
-  border: 0.075em solid white;
+  border: 0.075em solid var(--bg-light);
 }
 .c-form:valid {
   border-color: var(--random-color);
@@ -98,7 +99,7 @@
 }
 
 .c-form__input {
-  color: white;
+  color: var(--bg-light);
   height: 100%;
   width: 100%;
   padding: 0 0.714em;
@@ -118,14 +119,14 @@
   color: var(--random-color);
 }
 .c-form__input:required:valid + .c-form__buttonLabel {
-  color: #282c34;
+  color: var(--bg-dark);
 }
 .c-form__input:required:valid + .c-form__buttonLabel::before {
   pointer-events: initial;
 }
 .c-form__input:required:valid + .c-form__buttonLabel .c-form__button {
   background-color: var(--random-color);
-  color: #282c34;
+  color: var(--bg-dark);
   font-weight: 250;
   border: 0;
   opacity: 1;
@@ -133,7 +134,7 @@
 }
 
 .c-form__buttonLabel {
-  color: #282c3480;
+  color: var(--bg-dark) 80;
   height: 100%;
   width: auto;
 }
@@ -154,6 +155,6 @@
   opacity: 0.5;
   color: var(--random-color);
   font-weight: 250;
-  border: 0.2vmin solid white;
+  border: 0.2vmin solid var(--bg-light);
   background-color: transparent;
 }
