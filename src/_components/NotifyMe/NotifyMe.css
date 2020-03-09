@@ -54,10 +54,10 @@
   box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
-  border: 0.075em solid var(--bg-light);
+  border: 0.075em solid var(--bg);
 }
 .c-form:valid {
-  border-color: var(--random-color);
+  border-color: var(--bg);
 }
 
 .c-form__toggle {
@@ -99,7 +99,7 @@
 }
 
 .c-form__input {
-  color: var(--bg-light);
+  color: var(--text);
   height: 100%;
   width: 100%;
   padding: 0 0.714em;
@@ -112,21 +112,21 @@
   color: currentColor;
   font-style: italic;
   letter-spacing: 0.5vmin;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--placeholder);
   text-transform: uppercase;
 }
 .c-form__input:required:valid {
   color: var(--random-color);
 }
 .c-form__input:required:valid + .c-form__buttonLabel {
-  color: var(--bg-dark);
+  color: var(--bg);
 }
 .c-form__input:required:valid + .c-form__buttonLabel::before {
   pointer-events: initial;
 }
 .c-form__input:required:valid + .c-form__buttonLabel .c-form__button {
   background-color: var(--random-color);
-  color: var(--bg-dark);
+  color: var(--bg);
   font-weight: 250;
   border: 0;
   opacity: 1;
@@ -134,7 +134,7 @@
 }
 
 .c-form__buttonLabel {
-  color: var(--bg-dark) 80;
+  color: var(--bg) 80;
   height: 100%;
   width: auto;
 }
@@ -153,8 +153,8 @@
   height: 100%;
   width: 4em;
   opacity: 0.5;
-  color: var(--random-color);
+  color: var(--text);
   font-weight: 250;
-  border: 0.2vmin solid var(--bg-light);
+  border: 0.2vmin solid var(--text);
   background-color: transparent;
 }

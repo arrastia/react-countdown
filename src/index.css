@@ -1,8 +1,14 @@
 :root {
-  --bg-dark: #282c34;
-  --bg-light: #f9fafb;
+  --bg: #f9fafb;
+  --text: #282c34;
   --random-color: #61dafb;
   --react: #61dafb;
+}
+
+.dark-mode {
+  --bg: #282c34;
+  --text: #f9fafb;
+  --placeholder: #ffffffb3;
 }
 
 body {
