@@ -1,30 +1,26 @@
 import React from 'react';
 
-import './App.css';
-
-import iconsResources from 'config/icons.json';
+import styles from './App.module.scss';
 
 import { Countdown } from 'components/Countdown';
 import { Layout } from 'components/Layout';
 import { NotifyMe } from 'components/NotifyMe/NotifyMe';
-import { SocialMedia } from 'components/SocialMedia/SocialMedia';
+import { SocialMedia } from 'components/SocialMedia';
 import { Title } from 'components/Title';
 
-import { ResourcesContext } from 'tools/context/ResourcesContext';
+import { ResourcesProvider } from 'tools/Provider/RecourcesProvider';
 
 export const App = () => {
-  const resources = { ...iconsResources };
-
   const layout = children => <Layout>{children}</Layout>;
 
   return layout(
-    <ResourcesContext.Provider value={resources}>
-      <main className="App-main">
+    <ResourcesProvider>
+      <main className={styles.main}>
         <Title />
         <Countdown />
         <NotifyMe />
         <SocialMedia />
       </main>
-    </ResourcesContext.Provider>
+    </ResourcesProvider>
   );
 };

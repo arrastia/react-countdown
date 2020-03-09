@@ -5,12 +5,10 @@ import styles from './Layout.module.scss';
 import { Footer } from './.components/Footer';
 import { Header } from './.components/Header';
 
-export const Layout = ({ children }) => {
-  return (
-    <div className={styles.App}>
-      <Header />
-      {children}
-      <Footer />
-    </div>
-  );
-};
+export const Layout = ({ children }) => (
+  <div className={styles.app}>
+    <Header />
+    {children}
+    <Footer />
+  </div>
+);

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import './SocialMedia.css';
 
-import { ResourcesContext } from 'tools/context/ResourcesContext';
+import { ResourcesContext } from 'tools/Context/ResourcesContext';
 
 export const SocialMedia = () => {
   const resources = useContext(ResourcesContext);

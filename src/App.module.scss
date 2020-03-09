@@ -1,0 +1,20 @@
+.main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(100vh - 30vmin);
+  justify-content: center;
+  left: 0;
+  margin: 1vmin;
+  position: absolute;
+  top: 15vmin;
+  width: calc(100vw - 2vmin);
+}
+
+@media screen and (max-width: 414px) {
+  .main {
+    height: calc(100vh - 35vmin);
+    top: 25vmin;
+  }
+}
