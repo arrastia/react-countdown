@@ -1,0 +1,41 @@
+.wrap {
+  margin: auto;
+  padding: 0;
+
+  .items {
+    display: inline-block;
+    font-size: 3vmin;
+    font-weight: 100;
+    letter-spacing: 1vmin;
+    list-style-type: none;
+    padding: 2vmin;
+    text-transform: uppercase;
+
+    .time {
+      display: block;
+      font-size: 9vmin;
+    }
+  }
+}
+
+.timeOver {
+  font-size: 10vmin;
+  font-weight: 100;
+  letter-spacing: 1vmin;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 414px) {
+  .wrap {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    .items {
+      font-size: 5vmin !important;
+
+      .time {
+        font-size: 15vmin !important;
+      }
+    }
+  }
+}
