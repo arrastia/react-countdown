@@ -1,0 +1,180 @@
+.checkbox {
+  display: none;
+
+  &:checked + .formContainer {
+    .form {
+      width: 18.75em;
+
+      .label {
+        opacity: 0;
+        transform: scale(0.7);
+        visibility: hidden;
+      }
+
+      .input,
+      .buttonLabel {
+        opacity: 1;
+        transform: scale(1);
+        transition: 0.2s 0.1s;
+        visibility: visible;
+      }
+    }
+  }
+
+  &:not(:checked),
+  &:checked {
+    + .formContainer .input:required:valid ~ .label::before {
+      content: 'Thank You!';
+      letter-spacing: 0.2vmin;
+    }
+  }
+
+  &:not(:checked) + .formContainer {
+    .input:required:valid ~ .label {
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}
+
+.formContainer {
+  font-weight: 700;
+  margin: auto;
+  position: relative;
+}
+
+.formContainer,
+.form,
+.label {
+  height: 3.125em;
+  width: 10em;
+}
+
+.form,
+.label {
+  border-radius: 3.125em;
+  position: absolute;
+  transition: 0.2s;
+}
+
+.form {
+  border: 0.075em solid var(--bg);
+  box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  padding: 0.625em;
+  transform: translateX(-50%);
+
+  &:valid {
+    border-color: var(--bg);
+  }
+}
+
+.label {
+  align-items: center;
+  color: var(--random-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  transition: color 2s ease;
+  z-index: 1;
+
+  &::before {
+    content: attr(data-title);
+    font-size: 4vmin;
+    font-weight: 150;
+    letter-spacing: 0.3vmin;
+    text-transform: uppercase;
+  }
+}
+
+.input,
+.button {
+  border-radius: 5em;
+  border: 0;
+  box-sizing: border-box;
+  font: inherit;
+  outline: 0;
+}
+
+.input,
+.buttonLabel {
+  font-size: 0.875em;
+  font-weight: 100;
+  letter-spacing: 1vmin;
+  opacity: 0;
+  text-transform: uppercase;
+  transform: scale(0.7);
+  transition: 0s;
+  visibility: hidden;
+}
+
+.input {
+  background: transparent;
+  color: var(--text);
+  font-weight: 200;
+  height: 100%;
+  letter-spacing: 0.1vmin;
+  padding: 0 0.714em;
+  text-transform: lowercase;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--placeholder);
+    font-style: italic;
+    letter-spacing: 0.5vmin;
+    text-transform: uppercase;
+  }
+
+  &:required:valid {
+    color: var(--random-color);
+    transition: color 2s ease;
+
+    + .buttonLabel {
+      color: var(--bg);
+
+      &::before {
+        pointer-events: initial;
+      }
+
+      .button {
+        background-color: var(--random-color);
+        color: var(--bg);
+        font-weight: 250;
+        border: 0;
+        opacity: 1;
+        transition: 0.4s 0.2s;
+      }
+    }
+  }
+}
+
+.buttonLabel {
+  color: var(--bg) 80;
+  height: 100%;
+  width: auto;
+
+  &::before {
+    content: '';
+    cursor: pointer;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.button {
+  background-color: transparent;
+  border: 0.2vmin solid var(--placeholder);
+  color: inherit;
+  color: var(--text);
+  font-weight: 250;
+  height: 100%;
+  opacity: 0.5;
+  padding: 0;
+  width: 4em;
+}
