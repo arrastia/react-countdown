@@ -18,6 +18,7 @@ svg,
   border-radius: 50%;
   pointer-events: none;
   margin: 0vmin !important;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {

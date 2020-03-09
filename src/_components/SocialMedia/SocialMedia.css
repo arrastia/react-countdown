@@ -16,30 +16,38 @@
 
 .buttons-wrapper .btn.codepen i {
   color: var(--random-color);
+  transition: color 2s ease;
 }
 .buttons-wrapper .btn.codepen::before {
   background-color: var(--random-color);
+  transition: color 2s ease;
 }
 
 .buttons-wrapper .btn.github i {
   color: var(--random-color);
+  transition: color 2s ease;
 }
 .buttons-wrapper .btn.github::before {
   background-color: var(--random-color);
+  transition: color 2s ease;
 }
 
 .buttons-wrapper .btn.instagram i {
   color: var(--random-color);
+  transition: color 2s ease;
 }
 .buttons-wrapper .btn.instagram::before {
   background-color: var(--random-color);
+  transition: color 2s ease;
 }
 
 .buttons-wrapper .btn.linkedin i {
   color: var(--random-color);
+  transition: color 2s ease;
 }
 .buttons-wrapper .btn.linkedin::before {
   background-color: var(--random-color);
+  transition: color 2s ease;
 }
 
 .buttons-wrapper .btn:focus::before,
