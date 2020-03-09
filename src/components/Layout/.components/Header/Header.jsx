@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Header.css';
 
-import { useDarkMode } from 'interfaces/views/.tools/_hooks/useDarkMode';
-import { useInterval } from 'interfaces/views/.tools/_hooks/useInterval';
+import { useDarkMode } from 'tools/_hooks/useDarkMode';
+import { useInterval } from 'tools/_hooks/useInterval';
 
 export const Header = () => {
   const [randomColor, setRandomColor] = useState('#61DAFB');

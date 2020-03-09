@@ -158,6 +158,6 @@
   opacity: 0.5;
   color: var(--text);
   font-weight: 250;
-  border: 0.2vmin solid var(--text);
+  border: 0.2vmin solid var(--placeholder);
   background-color: transparent;
 }

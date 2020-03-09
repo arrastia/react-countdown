@@ -12,6 +12,13 @@
   top: 15vmin;
 }
 
+@media screen and (max-width: 414px) {
+  .App-main {
+    top: 25vmin;
+    height: calc(100vh - 35vmin);
+  }
+}
+
 .App-logo {
   height: 10vmin;
   width: 10vmin;

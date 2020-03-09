@@ -28,6 +28,17 @@ svg,
   }
 }
 
+@media screen and (max-width: 414px) {
+  .App-header {
+    height: 25vmin;
+  }
+  svg,
+  .reactIconButton {
+    height: 15vmin;
+    width: 15vmin;
+  }
+}
+
 .reactIconButton {
   position: absolute;
   pointer-events: all;
