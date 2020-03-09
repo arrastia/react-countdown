@@ -1,7 +1,7 @@
 .buttons-wrapper .btn,
 .buttons-wrapper .btn::before,
 .buttons-wrapper .btn i {
-  transition: all 0.35s;
+  transition: all 0.35s, color 2s ease, background-color 2s ease;
   transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
 }
 
@@ -16,38 +16,30 @@
 
 .buttons-wrapper .btn.codepen i {
   color: var(--random-color);
-  transition: color 2s ease;
 }
 .buttons-wrapper .btn.codepen::before {
   background-color: var(--random-color);
-  transition: color 2s ease;
 }
 
 .buttons-wrapper .btn.github i {
   color: var(--random-color);
-  transition: color 2s ease;
 }
 .buttons-wrapper .btn.github::before {
   background-color: var(--random-color);
-  transition: color 2s ease;
 }
 
 .buttons-wrapper .btn.instagram i {
   color: var(--random-color);
-  transition: color 2s ease;
 }
 .buttons-wrapper .btn.instagram::before {
   background-color: var(--random-color);
-  transition: color 2s ease;
 }
 
 .buttons-wrapper .btn.linkedin i {
   color: var(--random-color);
-  transition: color 2s ease;
 }
 .buttons-wrapper .btn.linkedin::before {
   background-color: var(--random-color);
-  transition: color 2s ease;
 }
 
 .buttons-wrapper .btn:focus::before,
