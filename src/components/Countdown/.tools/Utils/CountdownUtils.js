@@ -1,5 +1,5 @@
 const calculateTimeLeft = () => {
-  const difference = new Date('2020-5-25') - new Date();
+  const difference = new Date('2020/5/25') - new Date();
   let timeLeft = {};
 
   if (difference > 0) {
