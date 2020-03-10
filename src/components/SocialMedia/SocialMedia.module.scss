@@ -1,0 +1,60 @@
+.wrap {
+  font-size: auto;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+
+  .btn {
+    background-color: transparent;
+    border-radius: 30%;
+    display: inline-block;
+    height: 9vmin;
+    line-height: 9vmin;
+    margin: 0 1vmin;
+    opacity: 0.99;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 9vmin;
+
+    i {
+      color: var(--random-color);
+      font-size: 5vmin;
+      transform: scale(0.8);
+      vertical-align: middle;
+      transition: color 1s ease !important;
+    }
+
+    &::before {
+      background-color: var(--random-color);
+      content: '';
+      height: 120%;
+      left: -110%;
+      position: absolute;
+      top: 90%;
+      transform: rotate(45deg);
+      width: 120%;
+    }
+
+    &:focus::before,
+    &:hover::before {
+      left: -10%;
+      top: -10%;
+    }
+
+    &:focus i,
+    &:hover i {
+      color: var(--bg);
+      transform: scale(1);
+      transition: color 1s ease !important;
+    }
+  }
+
+  .btn,
+  .btn::before,
+  .btn i {
+    transition: all 0.35s, color 2s ease, background-color 2s ease;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  }
+}
