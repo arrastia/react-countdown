@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 
-import './SocialMedia.css';
+import styles from './SocialMedia.module.scss';
+
+import SocialMediaConfig from './.config/SocialMedia.config.json';
 
 import { ResourcesContext } from 'tools/Context/ResourcesContext';
 
@@ -8,19 +10,17 @@ export const SocialMedia = () => {
   const resources = useContext(ResourcesContext);
 
   return (
-    <div className="buttons-wrapper">
-      <a className="btn github" href="">
-        <i className={resources.icons['github']}></i>
-      </a>
-      <a className="btn codepen" href="">
-        <i className={resources.icons['codepen']}></i>
-      </a>
-      <a className="btn linkedin" href="">
-        <i className={resources.icons['linkedin']}></i>
-      </a>
-      <a className="btn instagram" href="">
-        <i className={resources.icons['instagram']}></i>
-      </a>
+    <div className={styles.wrap}>
+      {SocialMediaConfig.networks.map(item => (
+        <a
+          className={`${styles.btn} ${styles[item.name]}`}
+          href={item.url}
+          rel="noopener noreferrer"
+          target="_blank"
+          title={item.name}>
+          <i className={resources.icons[item.name]}></i>
+        </a>
+      ))}
     </div>
   );
 };

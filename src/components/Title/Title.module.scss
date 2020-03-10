@@ -1,0 +1,50 @@
+.wrap {
+  margin: auto;
+
+  .title {
+    font-size: 7vmin;
+    font-weight: 200;
+    letter-spacing: 2vmin;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .subtitleWrap {
+    background: transparent;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: attr(data-hover);
+      font-size: 2.5vmin;
+      font-weight: 100;
+      left: 0;
+      letter-spacing: 1vmin;
+      opacity: 0;
+      position: absolute;
+      top: 35%;
+      transform: translate(-100%, 0);
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+    }
+
+    &:hover::before {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    &:hover .subtitle {
+      opacity: 0;
+      transform: translate(100%, 0);
+    }
+
+    .subtitle {
+      font-size: 2.5vmin;
+      font-weight: 100;
+      letter-spacing: 1vmin;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
