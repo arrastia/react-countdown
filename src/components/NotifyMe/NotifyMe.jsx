@@ -2,13 +2,23 @@ import React, { useRef } from 'react';
 
 import styles from './NotifyMe.module.scss';
 
+import { useLocalStorage } from 'tools/Hooks/useLocalStorage';
+
 export const NotifyMe = () => {
   const inputRef = useRef(null);
   const checkboxRef = useRef(null);
 
+  const [isNotified, setIsNotified] = useLocalStorage('is-notified', false);
+
   const onCloseNotifyMe = () => (document.getElementById('checkbox').checked = false);
 
   const onFocusInput = () => inputRef.current.focus();
+
+  const onNotifyMe = () => {
+    if (inputRef.current.checkValidity()) {
+      setIsNotified(true);
+    }
+  };
 
   return (
     <>
@@ -23,12 +33,17 @@ export const NotifyMe = () => {
             ref={inputRef}
             required
           />
-          <label className={styles.buttonLabel} htmlFor="checkbox">
+          <label className={styles.buttonLabel} htmlFor="checkbox" onClick={() => onNotifyMe()}>
             <button className={styles.button} type="button">
               Send
             </button>
           </label>
-          <label className={styles.label} htmlFor="checkbox" data-title="Notify me" />
+          <label
+            className={styles.label}
+            data-title={!isNotified ? 'Notify me' : 'Thank You'}
+            htmlFor="checkbox"
+            style={{ pointerEvents: isNotified ? 'none' : 'all' }}
+          />
         </form>
       </div>
     </>
