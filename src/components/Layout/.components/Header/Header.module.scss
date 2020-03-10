@@ -1,0 +1,60 @@
+.header {
+  align-items: center;
+  display: flex;
+  height: 15vmin;
+  justify-content: center;
+  left: 0;
+  margin: 1vmin;
+  position: absolute;
+  top: 0;
+  width: calc(100vw - 2vmin);
+
+  .svg,
+  .themeBtn {
+    border-radius: 50%;
+    border: 0.25vmin solid;
+    cursor: pointer;
+    height: 10vmin;
+    margin: 0vmin !important;
+    pointer-events: none;
+    width: 10vmin;
+  }
+
+  .themeBtn {
+    background-color: transparent;
+    border-color: transparent;
+    pointer-events: all;
+    position: absolute;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .svg {
+    animation: logoSpin infinite 20s linear;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .header {
+    height: 25vmin;
+
+    .svg,
+    .themeBtn {
+      height: 15vmin;
+      width: 15vmin;
+    }
+  }
+}
+
+@keyframes logoSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
