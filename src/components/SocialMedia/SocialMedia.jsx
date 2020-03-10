@@ -4,7 +4,7 @@ import styles from './SocialMedia.module.scss';
 
 import SocialMediaConfig from './.config/SocialMedia.config.json';
 
-import { ResourcesContext } from 'tools/Context/ResourcesContext';
+import { ResourcesContext } from 'tools/Contexts/ResourcesContext';
 
 export const SocialMedia = () => {
   const resources = useContext(ResourcesContext);

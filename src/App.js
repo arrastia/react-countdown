@@ -8,7 +8,7 @@ import { NotifyMe } from 'components/NotifyMe/NotifyMe';
 import { SocialMedia } from 'components/SocialMedia';
 import { Title } from 'components/Title';
 
-import { ResourcesProvider } from 'tools/Provider/RecourcesProvider';
+import { ResourcesProvider } from 'tools/Providers/RecourcesProvider';
 
 export const App = () => {
   const layout = children => <Layout>{children}</Layout>;

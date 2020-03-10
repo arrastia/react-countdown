@@ -2,7 +2,7 @@ import React from 'react';
 
 import iconsResources from 'config/icons.json';
 
-import { ResourcesContext } from 'tools/Context/ResourcesContext';
+import { ResourcesContext } from 'tools/Contexts/ResourcesContext';
 
 export const ResourcesProvider = ({ children }) => {
   const resources = { ...iconsResources };
