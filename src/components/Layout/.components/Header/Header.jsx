@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import styles from './Header.module.scss';
 
+import { useAnimation } from 'tools/Hooks/useAnimation';
 import { useDarkMode } from 'tools/Hooks/useDarkMode';
 import { useInterval } from 'tools/Hooks/useInterval';
-import { useAnimation } from 'tools/Hooks/useAnimation';
 
 export const Header = () => {
   const [randomColor, setRandomColor] = useState('#61DAFB');
@@ -14,7 +14,7 @@ export const Header = () => {
 
   useInterval(() => {
     //THis is with all colors
-    setRandomColor('#' + Math.floor(Math.random() * 16777215).toString(16));
+    setRandomColor(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
     //this with light
     //var letters = 'BCDEF'.split('');
     //var color = '#';
