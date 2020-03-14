@@ -1,3 +1,3 @@
 import { createContext } from 'react';
 
-export const LanguageContext = createContext({ resources: {} });
+export const LanguageContext = createContext({ language: {} });
