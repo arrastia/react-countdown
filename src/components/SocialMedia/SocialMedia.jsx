@@ -2,12 +2,11 @@ import React, { useContext } from 'react';
 
 import styles from './SocialMedia.module.scss';
 
+import { icons } from 'config/icons';
 import SocialMediaConfig from './.config/SocialMedia.config.json';
 
-import { ResourcesContext } from 'tools/Contexts/ResourcesContext';
-
 export const SocialMedia = () => {
-  const resources = useContext(ResourcesContext);
+  const resources = { ...icons };
 
   return (
     <div className={styles.wrap}>
