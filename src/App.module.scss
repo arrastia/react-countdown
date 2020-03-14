@@ -3,18 +3,18 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: calc(100vh - 30vmin);
+  height: calc(100vh - 50vmin);
   justify-content: center;
   left: 0;
   margin: 1vmin;
   position: absolute;
-  top: 15vmin;
+  top: 25vmin;
   width: calc(100vw - 2vmin);
 }
 
 @media screen and (max-width: 414px) {
   .main {
-    height: calc(100vh - 35vmin);
-    top: 25vmin;
+    height: calc(100vh - 60vmin);
+    top: 30vmin;
   }
 }

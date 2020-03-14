@@ -4,6 +4,7 @@ import styles from './Header.module.scss';
 
 import { useAnimation } from 'tools/Hooks/useAnimation';
 import { useDarkMode } from 'tools/Hooks/useDarkMode';
+import { useHover } from 'tools/Hooks/useHover';
 import { useInterval } from 'tools/Hooks/useInterval';
 
 export const Header = () => {
@@ -11,6 +12,7 @@ export const Header = () => {
 
   const animation = useAnimation('elastic', 1000, 0);
   const [darkMode, setDarkMode] = useDarkMode();
+  const [hoverRef, isHovered] = useHover();
 
   useInterval(() => {
     //THis is with all colors
@@ -28,7 +30,7 @@ export const Header = () => {
   document.documentElement.style.setProperty('--random-color', randomColor);
 
   const reactIcon = () => (
-    <div style={{ marginTop: animation * 100 - 100 }}>
+    <div className={isHovered && styles.isHovered} style={{ marginTop: animation * 100 - 100 }}>
       <svg
         className={styles.svg}
         xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +49,7 @@ export const Header = () => {
     <button
       className={styles.themeBtn}
       onClick={() => setDarkMode(!darkMode)}
+      ref={hoverRef}
       style={{ marginTop: animation * 100 - 100 }}
     />
   );

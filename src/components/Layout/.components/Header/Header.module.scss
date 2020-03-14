@@ -1,7 +1,7 @@
 .header {
   align-items: center;
   display: flex;
-  height: 15vmin;
+  height: 25vmin;
   justify-content: center;
   left: 0;
   margin: 1vmin;
@@ -29,6 +29,11 @@
     &:focus {
       outline: none;
     }
+  }
+
+  .isHovered {
+    transform: scale(1.25);
+    transition: 0.08s linear;
   }
 }
 
