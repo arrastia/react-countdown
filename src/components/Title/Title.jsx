@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import styles from './Title.module.scss';
 
-export const Title = () => (
-  <div className={styles.wrap}>
-    <h1 className={styles.title}>pablo arrastia</h1>
-    <div className={styles.subtitleWrap} data-hover="See you soon!">
-      <h2 className={styles.subtitle}>Working on the new website</h2>
+import { LanguageContext } from 'tools/Contexts/LanguageContext';
+import { TranslationsContext } from 'tools/Contexts/TranslationsContext';
+
+export const Title = () => {
+  const language = useContext(LanguageContext);
+  const translation = useContext(TranslationsContext);
+
+  return (
+    <div className={styles.wrap}>
+      <h1 className={styles.title}>{language[translation.selected]['title']}</h1>
+      <div className={styles.subtitleWrap} data-hover={language[translation.selected]['subtitleHidden']}>
+        <h2 className={styles.subtitle}>{language[translation.selected]['subtitle']}</h2>
+      </div>
     </div>
-  </div>
-);
+  );
+};
