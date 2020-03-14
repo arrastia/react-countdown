@@ -3,14 +3,17 @@ import React, { useRef } from 'react';
 import styles from './NotifyMe.module.scss';
 
 import { useLocalStorage } from 'tools/Hooks/useLocalStorage';
+import { useOnClickOutside } from 'tools/Hooks/useOnClickOutside';
 
 export const NotifyMe = () => {
-  const inputRef = useRef(null);
   const checkboxRef = useRef(null);
+  const formRef = useRef(null);
+  const inputRef = useRef(null);
 
   const [isNotified, setIsNotified] = useLocalStorage('is-notified', false);
+  useOnClickOutside(formRef, () => onCloseNotifyMe());
 
-  const onCloseNotifyMe = () => (document.getElementById('checkbox').checked = false);
+  const onCloseNotifyMe = () => (checkboxRef.current.checked = false);
 
   const onFocusInput = () => inputRef.current.focus();
 
@@ -22,12 +25,11 @@ export const NotifyMe = () => {
 
   return (
     <>
-      <input id="checkbox" className={styles.checkbox} type="checkbox" onClick={() => onFocusInput()} />
+      <input id="checkbox" className={styles.checkbox} ref={checkboxRef} type="checkbox" />
       <div className={styles.formContainer}>
-        <form className={styles.form} action="">
+        <form action="" className={styles.form} ref={formRef}>
           <input
             className={styles.input}
-            // onBlur={() => onCloseNotifyMe()}
             pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
             placeholder="E-mail"
             ref={inputRef}
@@ -42,6 +44,7 @@ export const NotifyMe = () => {
             className={styles.label}
             data-title={!isNotified ? 'Notify me' : 'Thank You'}
             htmlFor="checkbox"
+            onClick={() => onFocusInput()}
             style={{ pointerEvents: isNotified ? 'none' : 'all' }}
           />
         </form>
