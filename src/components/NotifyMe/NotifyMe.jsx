@@ -1,11 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 
 import styles from './NotifyMe.module.scss';
 
 import { useLocalStorage } from 'tools/Hooks/useLocalStorage';
 import { useOnClickOutside } from 'tools/Hooks/useOnClickOutside';
 
+import { LanguageContext } from 'tools/Contexts/LanguageContext';
+import { TranslationsContext } from 'tools/Contexts/TranslationsContext';
+
 export const NotifyMe = () => {
+  const language = useContext(LanguageContext);
+  const translation = useContext(TranslationsContext);
+
   const checkboxRef = useRef(null);
   const formRef = useRef(null);
   const inputRef = useRef(null);
@@ -31,18 +37,20 @@ export const NotifyMe = () => {
           <input
             className={styles.input}
             pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-            placeholder="E-mail"
+            placeholder={language[translation.selected]['email']}
             ref={inputRef}
             required
           />
           <label className={styles.buttonLabel} htmlFor="checkbox" onClick={() => onNotifyMe()}>
             <button className={styles.button} type="button">
-              Send
+              {language[translation.selected]['send']}
             </button>
           </label>
           <label
             className={styles.label}
-            data-title={!isNotified ? 'Notify me' : 'Thank You'}
+            data-title={
+              !isNotified ? language[translation.selected]['notifyMe'] : language[translation.selected]['thanks']
+            }
             htmlFor="checkbox"
             onClick={() => onFocusInput()}
             style={{ pointerEvents: isNotified ? 'none' : 'all' }}
