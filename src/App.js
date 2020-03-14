@@ -8,19 +8,24 @@ import { NotifyMe } from 'components/NotifyMe/NotifyMe';
 import { SocialMedia } from 'components/SocialMedia';
 import { Title } from 'components/Title';
 
-import { ResourcesProvider } from 'tools/Providers/RecourcesProvider';
+import { LanguageProvider } from 'tools/Providers/LanguageProvider';
+import { TranslationsProvider } from 'tools/Providers/TranslationsProvider';
 
 export const App = () => {
-  const layout = children => <Layout>{children}</Layout>;
+  const layout = children => (
+    <LanguageProvider>
+      <TranslationsProvider>
+        <Layout>{children}</Layout>
+      </TranslationsProvider>
+    </LanguageProvider>
+  );
 
   return layout(
-    <ResourcesProvider>
-      <main className={styles.main}>
-        <Title />
-        <Countdown />
-        <NotifyMe />
-        <SocialMedia />
-      </main>
-    </ResourcesProvider>
+    <main className={styles.main}>
+      <Title />
+      <Countdown />
+      <NotifyMe />
+      <SocialMedia />
+    </main>
   );
 };
