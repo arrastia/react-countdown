@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import styles from './Countdown.module.scss';
+
+import { LanguageContext } from 'tools/Contexts/LanguageContext';
+import { TranslationsContext } from 'tools/Contexts/TranslationsContext';
 
 import { CountdownUtils } from './.tools/Utils/CountdownUtils';
 
 export const Countdown = () => {
+  const language = useContext(LanguageContext);
+  const translation = useContext(TranslationsContext);
+
   const [timeLeft, setTimeLeft] = useState(CountdownUtils.calculateTimeLeft());
 
   useEffect(() => {
@@ -25,7 +31,7 @@ export const Countdown = () => {
         <span id={interval} className={styles.time}>
           {timeLeft[interval]}
         </span>
-        {interval}
+        {language[translation.selected][interval]}
       </li>
     );
   });
@@ -35,7 +41,7 @@ export const Countdown = () => {
       {timerComponents.length ? (
         <ul className={styles.wrap}>{timerComponents}</ul>
       ) : (
-        <span className={styles.timeOver}>time is over</span>
+        <span className={styles.timeOver}>{language[translation.selected]['timeOver']}</span>
       )}
     </>
   );
