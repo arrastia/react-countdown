@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 export const useAnimationTimer = (duration = 1000, delay = 0) => {
   const [elapsed, setElapsed] = useState(0);
-  let animationFrame, timerStop, start;
 
   useEffect(() => {
+    let animationFrame, timerStop, start;
     const onFrame = () => {
       setElapsed(Date.now() - start);
       onLoop();
