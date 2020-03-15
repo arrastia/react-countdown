@@ -1,4 +1,4 @@
-export const animationUtils = {
+export const AnimationUtils = {
   cubic: t => t * (4 * t * t - 9 * t + 6),
 
   elastic: t => t * (33 * t * t * t * t - 106 * t * t * t + 126 * t * t - 67 * t + 15),
