@@ -1,0 +1,41 @@
+{
+  "STRING_LENGTH_MAX": 22,
+  "notificationSchema": [
+    {
+      "key": "success",
+      "lifeTime": 5000,
+      "fixed": false,
+      "types": [
+        {
+          "key": "SEND_EMAIL_SUCCESS",
+          "lifeTime": 5000,
+          "fixed": false
+        }
+      ]
+    },
+    {
+      "key": "info",
+      "lifeTime": 5000,
+      "fixed": false,
+      "types": [
+        {
+          "key": "SEND_EMAIL_INFO",
+          "lifeTime": 5000,
+          "fixed": false
+        }
+      ]
+    },
+    {
+      "key": "error",
+      "lifeTime": 0,
+      "fixed": true,
+      "types": [
+        {
+          "key": "SEND_EMAIL_ERROR",
+          "lifeTime": 5000,
+          "fixed": false
+        }
+      ]
+    }
+  ]
+}
