@@ -24,7 +24,7 @@
   &:not(:checked),
   &:checked {
     + .formContainer .input:required:valid ~ .label::before {
-      content: 'Thank You!';
+      content: attr(data-title);
       letter-spacing: 0.2vmin;
     }
   }
