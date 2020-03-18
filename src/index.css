@@ -1,12 +1,18 @@
 :root {
   --bg: #f9fafb;
-  --growl-error: #f10404;
+  --black: #000000;
+  --error: #f98e97;
+  --growl-error: #f84444;
   --growl-info: #61dafb;
-  --growl-succes: #04f16f;
+  --growl-success: #04f16f;
   --growl-warning: #fbff00;
+  --info: #8bc3ed;
   --random-color: #61dafb;
   --react: #61dafb;
+  --success: #bcdbbc;
   --text: #282c34;
+  --warning: #ffd902;
+  --white: #ffffff;
 }
 
 .dark-mode {
