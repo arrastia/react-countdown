@@ -1,0 +1,47 @@
+.p-growl-message-error {
+  background: linear-gradient(135deg, var(--growl-error), var(--error));
+  border: 0 none;
+  color: var(--black);
+}
+
+.p-growl-message-error .p-growl-image,
+.p-growl-message-error .p-growl-icon-close {
+  color: var(--black);
+}
+
+.p-growl-message-info {
+  background: linear-gradient(135deg, var(--growl-info), var(--info));
+  border: 0 none;
+  color: var(--black);
+}
+
+.p-growl-message-info .p-growl-image,
+.p-growl-message-info .p-growl-icon-close {
+  color: var(--black);
+}
+
+.p-growl-message-success {
+  background: linear-gradient(135deg, var(--growl-success), var(--success));
+  border: 0 none;
+  color: var(--black);
+}
+
+.p-growl-message-success .p-growl-image,
+.p-growl-message-success .p-growl-icon-close {
+  color: var(--black);
+}
+
+.p-growl-message-warn {
+  background-color: var(--warning);
+  border: 0 none;
+  color: var(--black);
+}
+
+.p-growl-message-warn .p-growl-image,
+.p-growl-message-warn .p-growl-icon-close {
+  color: var(--black);
+}
+
+.p-growl-icon-close-icon {
+  color: var(--black);
+}
