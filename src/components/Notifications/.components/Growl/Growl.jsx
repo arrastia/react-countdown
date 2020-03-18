@@ -1,74 +1,53 @@
-import React, { Component } from 'react';
-import { GrowlMessage } from './GrowlMessage';
-import DomHandler from './.tools/Utils/DomHandler';
+import React, { forwardRef, useState } from 'react';
+
 import './Growl.css';
 
-var messageIdx = 0;
+import { GrowlMessage } from './.components/GrowlMessage';
 
-export class Growl extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      messages: []
+import { GrowlUtils } from './.tools/Utils/GrowlUtils';
+
+export const Growl = forwardRef(({ baseZIndex, className, id, onClick, onRemove, position, style }, ref) => {
+  const [messages, setMessages] = useState([]);
+
+  let classNames = ('p-growl p-component p-growl-' + position, className);
+  let messageIdx = 0;
+
+  const onClose = message => {
+    let newMessages = messages.filter(msg => msg.id !== message.id);
+    setMessages(newMessages);
+    if (onRemove) {
+      onRemove(message);
+    }
+  };
+
+  if (ref.current !== null) {
+    ref.current.onShow = value => {
+      if (value) {
+        let newMessages;
+        if (Array.isArray(value)) {
+          for (let i = 0; i < value.length; i++) {
+            value[i].id = messageIdx++;
+            newMessages = [...messages, ...value];
+          }
+        } else {
+          value.id = messageIdx++;
+          newMessages = messages ? [...messages, value] : [value];
+        }
+        setMessages(newMessages);
+        ref.current.style.zIndex = String(baseZIndex + GrowlUtils.generateZIndex());
+      }
     };
 
-    this.onClose = this.onClose.bind(this);
+    ref.current.onClear = () => {
+      setState([]);
+    };
   }
 
-  show(value) {
-    if (value) {
-      let newMessages;
-
-      if (Array.isArray(value)) {
-        for (let i = 0; i < value.length; i++) {
-          value[i].id = messageIdx++;
-          newMessages = [...this.state.messages, ...value];
-        }
-      } else {
-        value.id = messageIdx++;
-        newMessages = this.state.messages ? [...this.state.messages, value] : [value];
-      }
-
-      this.setState({
-        messages: newMessages
-      });
-
-      this.container.style.zIndex = String(this.props.baseZIndex + DomHandler.generateZIndex());
-    }
-  }
-
-  clear() {
-    this.setState({
-      messages: []
-    });
-  }
-
-  onClose(message) {
-    let newMessages = this.state.messages.filter(msg => msg.id !== message.id);
-    this.setState({
-      messages: newMessages
-    });
-
-    if (this.props.onRemove) {
-      this.props.onRemove(message);
-    }
-  }
-
-  render() {
-    let className = ('p-growl p-component p-growl-' + this.props.position, this.props.className);
-
-    return (
-      <div
-        ref={el => {
-          this.container = el;
-        }}
-        id={this.props.id}
-        className={className}
-        style={this.props.style}>
-        {this.state.messages.map(message => (
-          <GrowlMessage message={message} onClick={this.props.onClick} onClose={this.onClose} />
-        ))}
-      </div>
-    );
-  }
-}
+  return (
+    <div ref={ref} id={id} className={classNames} style={style}>
+      {messages.map(message => (
+        <GrowlMessage message={message} onClickEvent={onClick} onCloseEvent={onClose} />
+      ))}
+    </div>
+  );
+});
