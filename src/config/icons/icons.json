@@ -2,8 +2,13 @@
   "icons": {
     "award": "fas fa-award",
     "codepen": "fab fa-codepen",
+    "cross": "fas fa-times",
+    "error": "fas fa-exclamation-triangle",
     "github": "fab fa-github",
+    "info": "fas fa-info-circle",
     "instagram": "fab fa-instagram",
-    "linkedin": "fab fa-linkedin-in"
+    "linkedin": "fab fa-linkedin-in",
+    "success": "fas fa-check",
+    "warning": "fas fa-exclamation-triangle"
   }
 }
