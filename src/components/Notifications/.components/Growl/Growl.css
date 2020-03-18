@@ -1,6 +1,16 @@
+.p-component {
+  box-sizing: border-box;
+}
+
 .p-growl {
   position: fixed;
-  width: 20em;
+  width: 20rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-growl {
+    width: 40%;
+  }
 }
 
 .p-growl.p-growl-topright {
@@ -29,12 +39,15 @@
 
 .p-growl-item-container {
   position: relative;
-  margin: 0 0 10px 0;
+  padding: 0.5rem;
+  margin: 0 0 1rem 0;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
 }
 
 .p-growl-item {
   position: relative;
-  padding: 0.5em 1em;
+  padding: 0.5em;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -49,12 +62,23 @@
   position: absolute;
   top: 4px;
   right: 4px;
-  cursor: pointer;
+  cursor: pointer !important;
+}
+
+.p-link {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: left;
+  box-sizing: border-box;
 }
 
 .p-growl-title {
+  padding: 0 0 0.5rem 0;
   font-weight: bold;
   display: block;
+  color: var(--black);
 }
 
 .p-growl-details {
@@ -62,12 +86,20 @@
 }
 
 .p-growl-image {
-  font-size: 2em;
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--bg) !important;
 }
 
 .p-growl-message {
-  margin-left: 1em;
+  margin-left: 3em;
   align-self: center;
+}
+
+@media screen and (max-width: 768px) {
+  .p-growl-message {
+    margin-left: 2.5rem;
+  }
 }
 
 .p-growl-message p {
@@ -81,7 +113,7 @@
 
 .p-growl-enter.p-growl-enter-active {
   opacity: 1;
-  transition: opacity 250ms ease-in;
+  transition: opacity 5ms ease-in;
 }
 
 .p-growl-exit {
@@ -92,5 +124,5 @@
   max-height: 0;
   overflow: hidden;
   margin-bottom: 0;
-  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
+  transition: max-height 5s cubic-bezier(0, 1, 0, 1), margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
 }

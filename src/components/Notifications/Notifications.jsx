@@ -31,5 +31,5 @@ export const Notifications = () => {
     }
   }, [language, notificationContext, notificationContext.toShow, translation.selected]);
 
-  return <Growl ref={growlRef} />;
+  return <Growl ref={growlRef} position="topRight" />;
 };

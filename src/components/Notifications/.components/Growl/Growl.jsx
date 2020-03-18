@@ -9,7 +9,6 @@ import { GrowlUtils } from './.tools/Utils/GrowlUtils';
 export const Growl = forwardRef(({ baseZIndex, className, id, onClick, onRemove, position, style }, ref) => {
   const [messages, setMessages] = useState([]);
 
-  let classNames = ('p-growl p-component p-growl-' + position, className);
   let messageIdx = 0;
 
   const onClose = message => {
@@ -42,9 +41,14 @@ export const Growl = forwardRef(({ baseZIndex, className, id, onClick, onRemove,
       setState([]);
     };
   }
-
   return (
-    <div ref={ref} id={id} className={classNames} style={style}>
+    <div
+      ref={ref}
+      id={id}
+      className={`${className ? className : undefined} p-growl p-component p-growl-${
+        position ? position.toLowerCase() : undefined
+      }`}
+      style={style}>
       {messages.map(message => (
         <GrowlMessage message={message} onClickEvent={onClick} onCloseEvent={onClose} />
       ))}
