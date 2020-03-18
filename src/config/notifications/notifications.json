@@ -28,7 +28,7 @@
     {
       "key": "error",
       "lifeTime": 0,
-      "fixed": true,
+      "fixed": false,
       "types": [
         {
           "key": "SEND_EMAIL_ERROR",

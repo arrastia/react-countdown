@@ -18,7 +18,7 @@ export const Notifications = () => {
   useEffect(() => {
     notificationContext.toShow.map(notification => {
       const message = <div>{notification.message}</div>;
-      growlRef.current.show({
+      return growlRef.current.onShow({
         severity: notification.type,
         summary: language[translation.selected][`notification${TextUtils.capitalize(notification.type)}Title`],
         detail: message,
@@ -29,7 +29,7 @@ export const Notifications = () => {
     if (notificationContext.toShow.length > 0) {
       notificationContext.clearToShow();
     }
-  }, [notificationContext.toShow]);
+  }, [language, notificationContext, notificationContext.toShow, translation.selected]);
 
   return <Growl ref={growlRef} />;
 };
