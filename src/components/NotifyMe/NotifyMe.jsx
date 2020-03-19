@@ -73,7 +73,13 @@ export const NotifyMe = () => {
     <>
       <input id="checkbox" className={styles.checkbox} ref={checkboxRef} type="checkbox" />
       <div className={styles.formContainer}>
-        <form action="" className={styles.form} ref={formRef}>
+        <form
+          action=""
+          className={styles.form}
+          onKeyDown={event => {
+            if (event.key === 'Enter') onNotifyMe(event);
+          }}
+          ref={formRef}>
           <input
             className={styles.input}
             pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
