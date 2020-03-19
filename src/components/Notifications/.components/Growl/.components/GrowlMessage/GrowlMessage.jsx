@@ -13,7 +13,7 @@ export const GrowlMessage = forwardRef(({ message, onClickEvent, onCloseEvent },
   useEffect(() => {
     if (!message.sticky) {
       timeout = setTimeout(() => {
-        onClose(null);
+        onClose();
       }, message.life || 3000);
     }
     return () => {
@@ -46,15 +46,13 @@ export const GrowlMessage = forwardRef(({ message, onClickEvent, onCloseEvent },
   };
 
   const onRenderCloseIcon = () => {
-    if (message.closable !== false) {
+    if (message.closable) {
       return (
         <button type="button" className="p-growl-icon-close p-link" onClick={() => onClose()}>
           <span className={`p-growl-icon-close-icon ${resources.icons['cross']}`}></span>
         </button>
       );
-    } else {
-      return <Fragment></Fragment>;
-    }
+    } else null;
   };
 
   return (

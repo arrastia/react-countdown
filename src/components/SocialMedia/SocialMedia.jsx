@@ -10,10 +10,11 @@ export const SocialMedia = () => {
 
   return (
     <div className={styles.wrap}>
-      {SocialMediaConfig.networks.map(item => (
+      {SocialMediaConfig.networks.map((item, index) => (
         <a
           className={`${styles.btn} ${styles[item.name]}`}
           href={item.url}
+          key={index}
           rel="noopener noreferrer"
           target="_blank"
           title={item.name}>

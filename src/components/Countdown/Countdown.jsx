@@ -27,7 +27,7 @@ export const Countdown = () => {
     }
 
     timerComponents.push(
-      <li className={styles.items}>
+      <li className={styles.items} key={interval}>
         <span id={interval} className={styles.time}>
           {timeLeft[interval]}
         </span>

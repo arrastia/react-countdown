@@ -30,7 +30,7 @@ export const Header = () => {
   document.documentElement.style.setProperty('--random-color', randomColor);
 
   const reactIcon = () => (
-    <div className={isHovered && styles.isHovered} style={{ marginTop: animation * 100 - 100 }}>
+    <div className={isHovered ? styles.isHovered : undefined} style={{ marginTop: animation * 100 - 100 }}>
       <svg
         className={styles.svg}
         xmlns="http://www.w3.org/2000/svg"
