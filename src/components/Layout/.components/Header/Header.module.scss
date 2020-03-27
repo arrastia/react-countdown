@@ -52,6 +52,10 @@
       height: 15vmin;
       width: 15vmin;
     }
+
+    .isHovered {
+      transform: scale(1);
+    }
   }
 }
 
