@@ -14,7 +14,7 @@ export const GrowlMessage = forwardRef(({ message, onClickEvent, onCloseEvent },
     if (!message.sticky) {
       timeout = setTimeout(() => {
         onClose();
-      }, message.life || 3000);
+      }, message.life || 1000);
     }
     return () => {
       if (timeout) {

@@ -17,8 +17,8 @@ export const NotifyMe = () => {
   const resources = { ...icons };
 
   const language = useContext(LanguageContext);
-  const translation = useContext(TranslationsContext);
   const notification = useContext(NotificationContext);
+  const translation = useContext(TranslationsContext);
 
   const [email, setEmail] = useState();
   const [isSending, setIsSending] = useState(false);
@@ -35,8 +35,8 @@ export const NotifyMe = () => {
   const onFocusInput = () => inputRef.current.focus();
 
   const onNotifyMe = event => {
-    setIsSending(true);
     if (inputRef.current.checkValidity()) {
+      setIsSending(true);
       notification.add({
         type: 'SEND_EMAIL_INFO'
       });
@@ -51,9 +51,7 @@ export const NotifyMe = () => {
         .send('gmail', /* 'template_yg7YSVyl', */ templateParams, 'user_XU4Y38mEGpTRJE2F2U9V1')
         .then(
           response => {
-            console.log('response', response);
             if (response.status >= 200 && response.status <= 299) {
-              console.log('okey');
               setIsNotified(true);
               notification.add({
                 type: 'SEND_EMAIL_SUCCESS'

@@ -15,12 +15,10 @@
     },
     {
       "key": "info",
-      "lifeTime": 5000,
       "fixed": false,
       "types": [
         {
           "key": "SEND_EMAIL_INFO",
-          "lifeTime": 5000,
           "fixed": false
         }
       ]
