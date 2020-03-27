@@ -8,21 +8,8 @@ import { TranslationsContext } from '../Contexts/TranslationsContext';
 
 import { notificationReducer } from '../Reducers/notificationReducer';
 
+import { NotificationUtils } from 'tools/Utils/NotificationUtils';
 import { TextUtils } from 'tools/Utils/TextUtils';
-
-export class Notification {
-  constructor({ downloadLink, fixed, id, key, lifeTime, message, read, redirectionUrl, type } = {}) {
-    this.downloadLink = downloadLink;
-    this.fixed = fixed;
-    this.id = id;
-    this.key = key;
-    this.lifeTime = lifeTime;
-    this.message = message;
-    this.read = read;
-    this.redirectionUrl = redirectionUrl;
-    this.type = type;
-  }
-}
 
 export const NotificationProvider = ({ children }) => {
   const language = useContext(LanguageContext);
@@ -30,43 +17,13 @@ export const NotificationProvider = ({ children }) => {
 
   const [notificationState, notificationDispatch] = useReducer(notificationReducer, { toShow: [], all: [] });
 
-  const parseText = (rawText = '', param = {}) => {
-    let text = rawText;
-    Object.keys(param).forEach(key => {
-      if (param[key]) {
-        text = text.replace(`{:${key}}`, param[key]);
-      } else {
-        text = text.replace(`{:${key}}`, '');
-      }
-    });
-    return text;
-  };
-
-  const onParse = ({ type, content = {}, message, config }) => {
-    const notificationDTO = {};
-    config.forEach(notificationGeneralTypeConfig => {
-      const notificationTypeConfig = notificationGeneralTypeConfig.types.find(configType => configType.key === type);
-      if (notificationTypeConfig) {
-        const { key, fixed, lifeTime } = notificationGeneralTypeConfig;
-        const { fixed: typeFixed, lifeTime: typeLifeTime } = notificationTypeConfig;
-        notificationDTO.message = message;
-        notificationDTO.type = key;
-        notificationDTO.fixed = !typeFixed ? typeFixed : fixed;
-        notificationDTO.lifeTime = typeLifeTime || lifeTime;
-        notificationDTO.key = type;
-        notificationDTO.message = parseText(notificationDTO.message, content);
-      }
-    });
-    return new Notification(notificationDTO);
-  };
-
   return (
     <NotificationContext.Provider
       value={{
         ...notificationState,
         add: notificationDTO => {
           const { type, content } = notificationDTO;
-          const notification = onParse({
+          const notification = NotificationUtils.onParse({
             type,
             content,
             message: language[translation.selected][TextUtils.camelCase(type)],
