@@ -8,6 +8,9 @@
     "info": "fas fa-info-circle",
     "instagram": "fab fa-instagram",
     "linkedin": "fab fa-linkedin-in",
+    "send": "far fa-paper-plane",
+    "sends": "fas fa-paper-plane",
+    "spinner": "fas fa-circle-notch",
     "success": "fas fa-check",
     "warning": "fas fa-exclamation-triangle"
   }

@@ -49,8 +49,8 @@ export const Growl = forwardRef(({ baseZIndex, className, id, onClick, onRemove,
         position ? position.toLowerCase() : undefined
       }`}
       style={style}>
-      {messages.map(message => (
-        <GrowlMessage message={message} onClickEvent={onClick} onCloseEvent={onClose} />
+      {messages.map((message, i) => (
+        <GrowlMessage key={i} message={message} onClickEvent={onClick} onCloseEvent={onClose} />
       ))}
     </div>
   );

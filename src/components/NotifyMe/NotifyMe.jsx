@@ -4,6 +4,8 @@ import emailjs from 'emailjs-com';
 
 import styles from './NotifyMe.module.scss';
 
+import { icons } from 'config/icons';
+
 import { useLocalStorage } from 'tools/Hooks/useLocalStorage';
 import { useOnClickOutside } from 'tools/Hooks/useOnClickOutside';
 
@@ -12,11 +14,14 @@ import { NotificationContext } from 'tools/Contexts/NotificationContext';
 import { TranslationsContext } from 'tools/Contexts/TranslationsContext';
 
 export const NotifyMe = () => {
+  const resources = { ...icons };
+
   const language = useContext(LanguageContext);
   const translation = useContext(TranslationsContext);
   const notification = useContext(NotificationContext);
 
   const [email, setEmail] = useState();
+  const [isSending, setIsSending] = useState(false);
 
   const checkboxRef = useRef(null);
   const formRef = useRef(null);
@@ -30,6 +35,7 @@ export const NotifyMe = () => {
   const onFocusInput = () => inputRef.current.focus();
 
   const onNotifyMe = event => {
+    setIsSending(true);
     if (inputRef.current.checkValidity()) {
       notification.add({
         type: 'SEND_EMAIL_INFO'
@@ -61,7 +67,10 @@ export const NotifyMe = () => {
             });
           }
         )
-        .finally(() => onCloseNotifyMe());
+        .finally(() => {
+          onCloseNotifyMe();
+          setIsSending(false);
+        });
     }
   };
 
@@ -76,9 +85,7 @@ export const NotifyMe = () => {
         <form
           action=""
           className={styles.form}
-          onKeyDown={event => {
-            if (event.key === 'Enter') onNotifyMe(event);
-          }}
+          onKeyDown={event => event.key === 'Enter' && onNotifyMe(event)}
           ref={formRef}>
           <input
             className={styles.input}
@@ -92,10 +99,14 @@ export const NotifyMe = () => {
           <label
             className={styles.buttonLabel}
             htmlFor="checkbox"
-            onClick={event => onNotifyMe(event)}
+            onClick={event => !isSending && onNotifyMe(event)}
             style={{ visibility: isNotified && 'hidden' }}>
             <button className={styles.button} type="button">
-              {language[translation.selected]['send']}
+              {!isSending ? (
+                language[translation.selected]['send']
+              ) : (
+                <i className={`${resources.icons['spinner']} ${styles.spinner}`}></i>
+              )}
             </button>
           </label>
           <label

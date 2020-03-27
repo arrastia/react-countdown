@@ -61,7 +61,7 @@ export const GrowlMessage = forwardRef(({ message, onClickEvent, onCloseEvent },
       className={`p-growl-item-container p-highlight p-growl-message-${message.severity}`}
       onClick={() => onClick()}
       ref={ref}>
-      <div className="p-growl-item" role="alert" aria-live="assertive" aria-atomic="true">
+      <div aria-atomic="true" aria-live="assertive" className="p-growl-item" role="alert">
         {onRenderCloseIcon()}
         <span className={`p-growl-image ${resources.icons[message.severity]}`}></span>
         <div className="p-growl-message">
