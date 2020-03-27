@@ -1,4 +1,4 @@
-import React, { forwardRef, Fragment, useEffect } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 
 import styles from './GrowlMessage.module.scss';
 
@@ -14,7 +14,7 @@ export const GrowlMessage = forwardRef(({ message, onClickEvent, onCloseEvent },
     if (!message.sticky) {
       timeout = setTimeout(() => {
         onClose();
-      }, message.life || 1000);
+      }, message.life || 700);
     }
     return () => {
       if (timeout) {
@@ -36,13 +36,8 @@ export const GrowlMessage = forwardRef(({ message, onClickEvent, onCloseEvent },
   };
 
   const onClose = () => {
-    if (timeout) {
-      clearTimeout(timeout);
-    }
-
-    if (onCloseEvent) {
-      onCloseEvent(message);
-    }
+    if (timeout) clearTimeout(timeout);
+    if (onCloseEvent) onCloseEvent(message);
   };
 
   const onRenderCloseIcon = () => {

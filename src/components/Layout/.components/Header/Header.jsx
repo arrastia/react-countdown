@@ -15,15 +15,7 @@ export const Header = () => {
   const [hoverRef, isHovered] = useHover();
 
   useInterval(() => {
-    //THis is with all colors
     setRandomColor(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
-    //this with light
-    //var letters = 'BCDEF'.split('');
-    //var color = '#';
-    //for (var i = 0; i < 6; i++) {
-    //  color += letters[Math.floor(Math.random() * letters.length)];
-    //}
-    //setRandomColor(color);
   }, 2000);
 
   getComputedStyle(document.documentElement).getPropertyValue('--random-color');

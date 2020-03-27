@@ -31,27 +31,6 @@
   top: auto;
 }
 
-/* Animations */
-.p-growl-enter {
-  opacity: 0.01;
-}
-
-.p-growl-enter.p-growl-enter-active {
-  opacity: 1;
-  transition: opacity 5ms ease-in;
-}
-
-.p-growl-exit {
-  max-height: 500px;
-}
-
-.p-growl-exit.p-growl-exit-active {
-  margin-bottom: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 5s cubic-bezier(0, 1, 0, 1), margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
-}
-
 @media screen and (max-width: 768px) {
   .growl {
     width: 40%;

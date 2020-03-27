@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { Fragment, useContext, useRef, useState } from 'react';
 
 import emailjs from 'emailjs-com';
 
@@ -48,7 +48,7 @@ export const NotifyMe = () => {
         message_html: email
       };
       emailjs
-        .send('gmail', /* 'template_yg7YSVyl', */ templateParams, 'user_XU4Y38mEGpTRJE2F2U9V1')
+        .send('gmail', 'template_yg7YSVyl', templateParams, 'user_XU4Y38mEGpTRJE2F2U9V1')
         .then(
           response => {
             if (response.status >= 200 && response.status <= 299) {
@@ -72,12 +72,8 @@ export const NotifyMe = () => {
     }
   };
 
-  // useEffect(() => {
-  //   setIsNotified(false);
-  // }, []);
-
   return (
-    <>
+    <Fragment>
       <input id="checkbox" className={styles.checkbox} ref={checkboxRef} type="checkbox" />
       <div className={styles.formContainer}>
         <form
@@ -118,6 +114,6 @@ export const NotifyMe = () => {
           />
         </form>
       </div>
-    </>
+    </Fragment>
   );
 };

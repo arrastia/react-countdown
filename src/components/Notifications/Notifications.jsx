@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 
 import { Growl } from './.components/Growl';
 
@@ -9,11 +9,11 @@ import { TranslationsContext } from 'tools/Contexts/TranslationsContext';
 import { TextUtils } from 'tools/Utils/TextUtils';
 
 export const Notifications = () => {
-  const notificationContext = useContext(NotificationContext);
   const language = useContext(LanguageContext);
+  const notificationContext = useContext(NotificationContext);
   const translation = useContext(TranslationsContext);
 
-  let growlRef = useRef(null);
+  const growlRef = useRef(null);
 
   useEffect(() => {
     notificationContext.toShow.map(notification => {
@@ -26,9 +26,7 @@ export const Notifications = () => {
         sticky: notification.fixed
       });
     });
-    if (notificationContext.toShow.length > 0) {
-      notificationContext.clearToShow();
-    }
+    if (notificationContext.toShow.length > 0) notificationContext.clearToShow();
   }, [language, notificationContext, notificationContext.toShow, translation.selected]);
 
   return <Growl ref={growlRef} position="topRight" />;

@@ -14,9 +14,7 @@ export const Growl = forwardRef(({ baseZIndex, className, id, onClick, onRemove,
   const onClose = message => {
     let newMessages = messages.filter(msg => msg.id !== message.id);
     setMessages(newMessages);
-    if (onRemove) {
-      onRemove(message);
-    }
+    if (onRemove) onRemove(message);
   };
 
   if (ref.current !== null) {
@@ -37,17 +35,16 @@ export const Growl = forwardRef(({ baseZIndex, className, id, onClick, onRemove,
       }
     };
 
-    ref.current.onClear = () => {
-      setState([]);
-    };
+    ref.current.onClear = () => setMessages([]);
   }
+
   return (
     <div
-      ref={ref}
-      id={id}
       className={`${className ? className : undefined} ${styles.growl} ${styles.component} ${
         position ? styles[position.toLowerCase()] : undefined
       }`}
+      id={id}
+      ref={ref}
       style={style}>
       {messages.map((message, i) => (
         <GrowlMessage key={i} message={message} onClickEvent={onClick} onCloseEvent={onClose} />

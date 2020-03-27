@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 
 import styles from './Countdown.module.scss';
 
@@ -22,9 +22,7 @@ export const Countdown = () => {
   const timerComponents = [];
 
   Object.keys(timeLeft).forEach(interval => {
-    if (!timeLeft[interval]) {
-      return;
-    }
+    if (!timeLeft[interval]) return;
 
     timerComponents.push(
       <li className={styles.items} key={interval}>
@@ -37,12 +35,12 @@ export const Countdown = () => {
   });
 
   return (
-    <>
+    <Fragment>
       {timerComponents.length ? (
         <ul className={styles.wrap}>{timerComponents}</ul>
       ) : (
         <span className={styles.timeOver}>{language[translation.selected]['timeOver']}</span>
       )}
-    </>
+    </Fragment>
   );
 };
