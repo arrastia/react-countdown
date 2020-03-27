@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react';
 
-import './Growl.css';
+import styles from './Growl.module.scss';
 
 import { GrowlMessage } from './.components/GrowlMessage';
 
@@ -45,8 +45,8 @@ export const Growl = forwardRef(({ baseZIndex, className, id, onClick, onRemove,
     <div
       ref={ref}
       id={id}
-      className={`${className ? className : undefined} p-growl p-component p-growl-${
-        position ? position.toLowerCase() : undefined
+      className={`${className ? className : undefined} ${styles.growl} ${styles.component} ${
+        position ? styles[position.toLowerCase()] : undefined
       }`}
       style={style}>
       {messages.map((message, i) => (

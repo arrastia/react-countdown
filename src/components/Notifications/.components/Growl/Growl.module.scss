@@ -1,0 +1,59 @@
+.component {
+  box-sizing: border-box;
+}
+
+.growl {
+  position: fixed;
+  width: 20rem;
+}
+
+.topright {
+  bottom: auto;
+  right: 20px;
+  top: 20px;
+}
+
+.topleft {
+  bottom: auto;
+  left: 20px;
+  top: 20px;
+}
+
+.bottomleft {
+  bottom: 20px;
+  left: 20px;
+  top: auto;
+}
+
+.bottomright {
+  bottom: 20px;
+  right: 20px;
+  top: auto;
+}
+
+/* Animations */
+.p-growl-enter {
+  opacity: 0.01;
+}
+
+.p-growl-enter.p-growl-enter-active {
+  opacity: 1;
+  transition: opacity 5ms ease-in;
+}
+
+.p-growl-exit {
+  max-height: 500px;
+}
+
+.p-growl-exit.p-growl-exit-active {
+  margin-bottom: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 5s cubic-bezier(0, 1, 0, 1), margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+@media screen and (max-width: 768px) {
+  .growl {
+    width: 40%;
+  }
+}

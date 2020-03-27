@@ -1,6 +1,6 @@
 import React, { forwardRef, Fragment, useEffect } from 'react';
 
-import './GrowlMessage.css';
+import styles from './GrowlMessage.module.scss';
 
 import { icons } from 'config/icons';
 
@@ -27,8 +27,8 @@ export const GrowlMessage = forwardRef(({ message, onClickEvent, onCloseEvent },
     if (
       onClickEvent &&
       !(
-        GrowlMessageUtils.hasClass(event.target, 'p-growl-icon-close') ||
-        GrowlMessageUtils.hasClass(event.target, 'p-growl-icon-close-icon')
+        GrowlMessageUtils.hasClass(event.target, styles.closeButton) ||
+        GrowlMessageUtils.hasClass(event.target, styles.closeIcon)
       )
     ) {
       onClickEvent(message);
@@ -48,8 +48,8 @@ export const GrowlMessage = forwardRef(({ message, onClickEvent, onCloseEvent },
   const onRenderCloseIcon = () => {
     if (message.closable) {
       return (
-        <button type="button" className="p-growl-icon-close p-link" onClick={() => onClose()}>
-          <span className={`p-growl-icon-close-icon ${resources.icons['cross']}`}></span>
+        <button type="button" className={`${styles.closeButton} ${styles.link}`} onClick={() => onClose()}>
+          <span className={`${styles.closeIcon} ${resources.icons['cross']}`}></span>
         </button>
       );
     } else null;
@@ -58,15 +58,15 @@ export const GrowlMessage = forwardRef(({ message, onClickEvent, onCloseEvent },
   return (
     <div
       aria-live="polite"
-      className={`p-growl-item-container p-highlight p-growl-message-${message.severity}`}
+      className={`${styles.itemWrap} p-highlight ${styles[message.severity]}`}
       onClick={() => onClick()}
       ref={ref}>
-      <div aria-atomic="true" aria-live="assertive" className="p-growl-item" role="alert">
+      <div aria-atomic="true" aria-live="assertive" className={styles.itemInner} role="alert">
         {onRenderCloseIcon()}
-        <span className={`p-growl-image ${resources.icons[message.severity]}`}></span>
-        <div className="p-growl-message">
-          <span className="p-growl-title">{message.severity.toUpperCase()}</span>
-          {message.detail && <div className="p-growl-details">{message.detail}</div>}
+        <span className={`${styles.image} ${resources.icons[message.severity]}`}></span>
+        <div className={styles.message}>
+          <span className={styles.title}>{message.severity.toUpperCase()}</span>
+          {message.detail && <div className={styles.details}>{message.detail}</div>}
         </div>
       </div>
     </div>

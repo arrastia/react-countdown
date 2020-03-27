@@ -1,0 +1,107 @@
+.itemWrap {
+  border-radius: 7px;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3);
+  margin: 0 0 1rem 0;
+  padding: 0.5rem;
+  position: relative;
+
+  .itemInner {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+    position: relative;
+
+    .closeButton {
+      cursor: pointer !important;
+      position: absolute;
+      right: 4px;
+      top: 4px;
+
+      .closeIcon {
+        color: var(--black);
+      }
+    }
+
+    .link {
+      background: transparent;
+      border: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    .image {
+      color: var(--bg) !important;
+      font-size: 1.5rem;
+      position: absolute;
+    }
+
+    .message {
+      align-self: center;
+      margin-left: 3em;
+
+      .title {
+        color: var(--black);
+        display: block;
+        font-weight: bold;
+        padding: 0 0 0.5rem 0;
+      }
+
+      .details {
+        margin-top: 0.5em;
+      }
+    }
+  }
+}
+
+.error {
+  background: linear-gradient(135deg, var(--growl-error), var(--error));
+  border: 0 none;
+  color: var(--black);
+
+  .image,
+  .closeButton {
+    color: var(--black);
+  }
+}
+
+.info {
+  background: linear-gradient(135deg, var(--growl-info), var(--info));
+  border: 0 none;
+  color: var(--black);
+
+  .image,
+  .closeButton {
+    color: var(--black);
+  }
+}
+
+.success {
+  background: linear-gradient(135deg, var(--growl-success), var(--success));
+  border: 0 none;
+  color: var(--black);
+
+  .image,
+  .closeButton {
+    color: var(--black);
+  }
+}
+
+.warn {
+  background-color: var(--warning);
+  border: 0 none;
+  color: var(--black);
+
+  .image,
+  .closeButton {
+    color: var(--black);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .message {
+    margin-left: 2.5rem;
+  }
+}
